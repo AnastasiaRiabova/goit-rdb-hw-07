@@ -1,0 +1,11 @@
+﻿p_1:
+SELECT id, date,YEAR(date) as year, MONTH(date) as month, DAY(date) as day FROM orders;
+p_2:
+SELECT id, date, DATE_ADD(date, INTERVAL 1 DAY) as one_day_added FROM orders;
+p_3:
+SELECT id, date, UNIX_TIMESTAMP(date) AS timestamp FROM orders;
+p_4:
+SELECT COUNT(*)FROM orders
+WHERE date BETWEEN ‘1996-07-10 00:00:00’ AND ‘1996-10-08 00:00:00’;
+p_5:
+SELECT id, date, JSON_OBJECT(‘id’, id, ‘date’, date) AS json_object FROM orders;
